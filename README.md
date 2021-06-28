@@ -4,7 +4,10 @@ Efficient Human behavior understanding_3d pose estimate
 ## Schedule
 |date|works|-|
 |----|----|----|
-||pose estimate||
+||pose estimate|O|
+||OpenPose(CVPR2017)||
+||DensePose(CVPR2018)||
+||TotalCapture||
 ||Baseline1||
 ||Baseline2||
 ||개발||
