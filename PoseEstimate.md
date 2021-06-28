@@ -1,5 +1,12 @@
 # pose estimate
 
+## (Markless) Human Pose Estimation 종류
+
+||2D pose|3D pose|
+|---|----|---|
+|Single-Person|Input: Image| Input: Image/Depth|
+|Multi-Person|Input: Image| Input: Image/Depth]
+
 ## Human Pose Estimation의 접근방식
 - **Top-Down방식**
 사람을 먼저 감지를 한 다음, 각 사람의 자세를 추정  
