@@ -17,8 +17,18 @@ class HMRTrainer(object):
     
   def _build_model(self):
     print('start building model')
+    
+    '''
+    load pretrain model
+    '''
     generator = HMRNetBase()
-    model_path = config.pre_trained_model['generator']
+    #model_path = config.pre_trained_model['generator']
+    discriminator = Discriminator()
+    #model_path = config.pre_trained_model['discriminator']
+    self.generator = nn.DataParallel(generator).cuda()
+    self.discriminator = nn.DataParallel(discriminator).cuda()
+    
+    print('finished build model.')
     
   def train(self):
     def save_model(result):
