@@ -12,10 +12,36 @@ class HMRNetBase(nn.Module):
     print('start creating sub modules...')
     self._create_sub_modules()
   def _create_sub_modules(self):
+    ''' smpl model, SMPL can create a mesh from beta & theta '''
+    self.smpl = SMPL(self.smpl_model, obj_saveable = True)
+    ''' only resnet50 과 hourglass is allowed currently, maybe other encoder will be allowed later. '''
+    
+    if self.encoder_name == 'resnet50':
+        print('creating resnet50')
+        self.encoder = Resnet.load_Res50Model()
+     elif self.encoder_name == 'hourglass':
+        print('creating hourglass')
+        self.encoder = _create_hourglass_net()
+     elif self.encoder_name.startswith('densenet'):
+        print('creating densenet')
+        self.encoder = load_denseNet(self.encoder_name)
+     else:
+        assert 0
   
   def forward(self, inputs):
+        ### Encoder 는 ResNet50, densenet, hourglass등이 쓰임 (각 encoder들은 _create_sub_modules 에서 생김)
+        
     if self.encoder_name == 'resnet50':
+       ## Encoder 넣어서 feature 추출 
       feature = self.encoder(inputs)
+       ## 추출된 Feature 뽑아서 Regressor삽입 parameter 추출
+      thetas = self.regressor(feature)
+        
+      detail_info = []
+      for theta in thetas:
+            detail_info.append(self._calc_detail_info(theta))
+            return detail_info
+     
 
 if __name__ == '__main__':
   cam = np.array([[0.9, 0, 0]], dtype = np.float)
