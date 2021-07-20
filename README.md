@@ -4,13 +4,7 @@ Efficient Human behavior understanding_3d pose estimate
 ## Schedule
 |date|works|-|
 |----|----|----|
-||pose estimate|O|
-||OpenPose(CVPR2017)||
-||DensePose(CVPR2018)||
-||TotalCapture||
-||Baseline1||
-||Baseline2(HMR)|https://github.com/MandyMo/pytorch_HMR/tree/master/src|
-||개발||
+||||
 
 
 ## WORKS
