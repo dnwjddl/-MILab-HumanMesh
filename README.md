@@ -21,6 +21,7 @@ Efficient Human behavior understanding_3d pose estimate
 - SMPL:A Skinned Multi-Person Linear Model, ACM Trans. Graphics (Proc. SIGGRAPH Asia), 2015
 - Keep it {SMPL}: Automatic Estimation of {3D} Human Pose and Shape from a Single Image, ECCV 2016
 - End-to-end Recovery of Human Shape and Pose, CVPR 2018 [참고](https://arxiv.org/pdf/1712.06584.pdf)
+- Learning to Reconstruct 3D Human Pose and Shape via Model-fitting in the Loop, ICCV 2019 [참고](https://arxiv.org/pdf/1909.12828v1.pdf)
 - VIBE: Video Inference for Human Body Pose and Shape Estimation, CVPR 2020
 - End-to-End Human Pose and Mesh Reconstruction with Transformers, CVPR 2021
 [참고](https://learning-sarah.tistory.com/entry/METROEnd-to-End-Human-Pose-and-Mesh-Reconstruction-with-Transformers)
