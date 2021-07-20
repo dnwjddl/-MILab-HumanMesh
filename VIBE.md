@@ -33,3 +33,32 @@ VIBE first extracts image features using CNN and processes these features with a
 Then, a regressor predicts the parameters of the SMPL body model for the whole input sequence.
 
 We refer to this part of the model as the pose generator
+
+![image](https://user-images.githubusercontent.com/72767245/126318090-27362a58-d49c-4288-8c16-796cf831e46f.png)
+
+The question is how can we obtain realistic 3D human motions from our generator?
+To achieve this, we train a motion discriminator using a large-scale 3D motion capture dataset called AMASS
+
+The motion discriminator takes predicted pose sequences along with pose sequenxes sampled from AMASS.
+
+The motion discriminator is trained to tell which sequence is real or fake.
+
+If the motion generator is able to fool the discriminator, the predicted motion is realistic.
+Training both the generator and discriminator together results in a method that achieves state-of-the-art performance.
+
+The motion discriminator uses a stack of GRU layers to process poses sequentially.
+Then, a self attention mechanism dynamically aggregates features and amplifies the contribution of important frames.
+
+
+## Datasets
+During Training, we use a mix of 2D and 3D datasets
+
+## Results
+
+For evaluation, we use challenging 3DPW dataset because it contains in the wild sequences with reference 3D pose and shape data
+
+We report the 3D distance between ground truth and predicted joints in millimeters
+
+> EVAL Metrics: **MPJPE** (Mean per joint position error)
+
+
