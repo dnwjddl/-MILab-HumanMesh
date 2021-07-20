@@ -20,3 +20,5 @@
 - Deep Network는 training loop내의 2D joint에 신체 모델을 맞추는 iterative optimization routine을 초기화하고, fitted estimate은 이후에 네트워크를 supervise 하는데 사용
 - Better network estimates은 더 나은 solution으로 optimization을 이끌 수 있고 더 accurate optimization은 network에 대한 더 나은 supervision을 제공하기 때문에 우리의 접근방식은 self-improving by nature
 - 3D ground truth이 희박하거나 구할 수 없는 다양한 환경에서 접근방식의 효과를 입증하고 최신 모델 기반 포즈 추정 접근 방식을 상당한 차이로 consistently outperform
+
+![image](https://user-images.githubusercontent.com/72767245/126330142-d825f708-1adf-47b6-9b01-66e9f59d116b.png)
