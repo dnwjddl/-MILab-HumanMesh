@@ -19,6 +19,10 @@ SPIN(SPIN: SMPL oPtimization IN the loop)이라는 논문에서는 최적화기�
 
 
 ---
+**[SMPL]**  
+Stretchable, deformable한 마네킹 mesh model  
+coefficient을 얻어서 mesh 모델을 linear하게 low-dimensional paramters로 표현 가능
+
 
 **[SMPLify]**  
 SMPLify 는 deep learning 방식이 아님.  
