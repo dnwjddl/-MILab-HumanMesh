@@ -46,9 +46,19 @@ HMR에서 아마 SMPL GT annotation이 존재하는지 여부에 따라 loss가 
 마지막으로 헷갈리시면 안되는 점은, SPIN에서는 학습 중에만 Optimization layer를 사용한다는 점입니다.   
 Inference time에는 단순히 한번 feed forward 하여 (HMR 처럼) SMPL parameter를 추정하게 됩니다.
 
+**[VIBE]**  
+Video domain에 가지고 옴  
+한계점 설명 | occlusion, Noisy observation cases  
+- inference time에 optimization이 필요하지 않음
 
-VIBE는 inference time에 optimization이 필요하지 않습니다.  
-HuMoR의 경우에는 Motion prior를 따로 학습하여 inference time에 이 prior를 활용한 optimization이 따로 필요합니다.  
-Real-time application 을 위한 연구에는 vibe가 용이할 것으로 보입니다.  
+**[HuMoR]**
+Motion prior를 따로 학습하여 inference time에 이 prior를 활용한 optimization이 따로 필요합니다.     
+진자의 운동, 사람의 운동(물리적인 것들을) modeling해서 occlusion에 robust하게 만들 수 있음
+
+> Real-time application 을 위한 연구에는 vibe가 용이할 것으로 보입니다.   
+
 VIBE 이외에도 video에서 SMPL fitting을 위한 다양한 연구가 많습니다. (https://akanazawa.github.io/human_dynamics/ 등등 찾아보시면 많습니다.)  
+
 또한 HuMoR에서 얘기한 motion prior는 자체적으로 정의를 내린 Human motion state와, markov assumption을 통해 학습한 prior이고, VIBE에서 사용한 motion prior와는 다르다고 보시면 될 것 같습니다.  
+
+
