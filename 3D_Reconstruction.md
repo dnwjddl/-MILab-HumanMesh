@@ -39,10 +39,16 @@ Optimization + Regression을 사용하는 것의 가장 핵심은 대부분의 H
 HMR에서 아마 SMPL GT annotation이 존재하는지 여부에 따라 loss가 다르게 적용되는 것을 보셨을 것입니다.
 만약 SMPLify와 같은 optimization을 통해 학습 시간이 더 걸리더라도, GT SMPL 파라미터를 가지고 있지 않은 training image에 대해 꽤 괜찮은 annotation을 얻어낼 수 있다면, regression 성능을 올릴 수 있겠죠 (추가적인 annotation을 사용할 수 있으니까요).  
 
+  
+**Optimization Layer가 Regression Network을 도와주는 방향**  
+
 따라서 SPIN의 경우에는 학습 시간이 조금 더 걸리더라도, SMPLify를 HMR의 CNN에 이어붙여, pseudo-GT SMPL parameter annotation을 얻어낼 수 있었고,
-이를 통해 regression network 학습에 추가적인 Supervision을 제공하여 SMPL parameter regression 성능을 끌어올릴 수 있다는 점이 제 생각에는 가장 큰 contribution입니다. (Optimization layer가 Regression network를 도와주는 방향)
-또한, 반대 방향으로, Regression network 뒤에 붙는 SMPLify 와 같은 opt. layer는, 학습 초반에는 HMR에서 추정하는 SMPL parameter가 아직 오류가 많아, optimize time이 오래 걸립니다.
-하지만 regression network의 학습이 진행될수록, SMPLify 에 제공되는 Initial SMPL parameter가 조금 더 좋아지게 되고, optimize를 위해 이전처럼 많은 step이 필요하지는 않게 됩니다. (Regression network가 Optimization layer를 도와주는 방향)
+이를 통해 regression network 학습에 추가적인 Supervision을 제공하여 SMPL parameter regression 성능을 끌어올릴 수 있다는 점이 제 생각에는 가장 큰 contribution입니다. 
+
+**Regression Network가 Optimization Layer를 도와주는 방향**  
+
+또한, 반대 방향으로, Regression network 뒤에 붙는 SMPLify 와 같은 opt. layer는, 학습 초반에는 HMR에서 추정하는 SMPL parameter가 아직 오류가 많아, optimize time이 오래 걸립니다. <br>
+하지만 regression network의 학습이 진행될수록, SMPLify 에 제공되는 Initial SMPL parameter가 조금 더 좋아지게 되고, optimize를 위해 이전처럼 많은 step이 필요하지는 않게 됩니다. 
 <br>
 <br>
 마지막으로 헷갈리시면 안되는 점은, SPIN에서는 학습 중에만 Optimization layer를 사용한다는 점입니다.   
