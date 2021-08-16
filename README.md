@@ -8,7 +8,7 @@ Efficient Human behavior understanding_3d pose estimate
 
  
 ## WORKS 
-- 논문 하루에 하나씩
+- 논문 하루에 하나씩 
 
 ## 목표
 논문을 공부하고 HMR을 기반으로하여, 백본 네트워크를 본인의 아이디어로 아키텍처를 재구성하고 학습시켜 성능을 유지하면서 속도 올리기(RealTime)
