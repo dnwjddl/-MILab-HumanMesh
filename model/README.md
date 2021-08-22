@@ -21,6 +21,7 @@
   - 여기서 MobileNetv3에서 쓴 것 처럼 ```AutoML```을 쓴다면 더 적은 파라미터를 가질 수 있지 않을까?
 
 ## 제안 (Pruning, Quantization, Knowledge Distillation 모두 적용)
+- 주요로 사용하는 block들을 수정하면서 model 만들어봄
 1. MobileNetv3 사용
 2. ShuffleNet
 3. ShuffleNet + AutoML
