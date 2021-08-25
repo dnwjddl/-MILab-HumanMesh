@@ -33,3 +33,11 @@
 - SqueezeNet에서 FireModule 대신 ```Bottleneck Residual Block```사용
 
 
+### 실험 결과
+
+|모델|pt|#paramters|MPJPE|ReconstructionError|InferenceTime|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|hmr|(12)210808-064723|26,977,501|315|172|0.07067|
+|pre_resnet|(20)210813-075405|26,977,501|445|194|0.07028|
+|pre_resnet|(19)210813-075030|26,977,501|443|192|0.06059|
+|pre_resnet|(11)210813-031301|26,977,501||||
